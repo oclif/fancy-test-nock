@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@anycli/tslint@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@anycli/tslint/-/tslint-0.2.5.tgz#63feeb981b11f36326e0cb745c62f51d55c2ed67"
+"@anycli/tslint@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@anycli/tslint/-/tslint-0.2.6.tgz#4251f4cb3744dc577309b4351d2c2e8b65072de2"
   dependencies:
     tslint "^5.9.1"
     tslint-xo "^0.6.0"
@@ -518,9 +518,9 @@ external-editor@^2.0.4:
     iconv-lite "^0.4.17"
     tmp "^0.0.33"
 
-fancy-test@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-1.0.0.tgz#116082e880c3ee486da58ff81bd7ce1eeb3b69b3"
+fancy-test@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-1.0.1.tgz#28eb801dffc341d7202ed90b6944019922b08b5b"
   dependencies:
     lodash "^4.17.4"
     stdout-stderr "^0.1.6"
