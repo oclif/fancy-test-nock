@@ -20,11 +20,14 @@ describe('nock', () => {
   })
   // from readme
 
-  // fancy()
-  // .nock('https://api.github.com', nock => {
-  //   nock
-  //   .get('/me')
-  //   .reply(200, {name: 'jdxcode'})
-  // })
-  // .end('calls .done()')
+  fancy
+  .nock('https://api.github.com', {reqheaders: {foo: 'bar'}}, nock => {
+    nock
+    .get('/me')
+    .reply(200, {name: 'jdxcode'})
+  })
+  .end('passes options', async () => {
+    const {body: user} = await HTTP.get('https://api.github.com/me', {headers: {foo: 'bar'}})
+    expect(user).to.have.property('name', 'jdxcode')
+  })
 })
