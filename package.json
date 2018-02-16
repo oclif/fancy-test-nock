@@ -1,7 +1,7 @@
 {
   "name": "@fancy-test/nock",
   "description": "extendable utilities for testing",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/jdxcode/fancy-test-nock/issues",
   "dependencies": {},
