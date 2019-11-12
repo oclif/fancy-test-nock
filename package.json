@@ -6,15 +6,16 @@
   "bugs": "https://github.com/jdxcode/fancy-test-nock/issues",
   "dependencies": {},
   "devDependencies": {
-    "@anycli/tslint": "^0.2.7",
     "@types/chai": "^4.1.2",
     "@types/mocha": "^5.0.0",
     "@types/nock": "^9.1.3",
     "@types/node": "^9.6.5",
     "chai": "^4.1.2",
     "concurrently": "^3.5.1",
-    "eslint": "^4.19.1",
+    "eslint": "^6.6.0",
     "eslint-config-anycli": "^1.3.2",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
     "fancy-test": "^1.0.4",
     "http-call": "^5.1.0",
     "mocha": "^5.1.0",
@@ -38,10 +39,11 @@
   "repository": "jdxcode/fancy-test-nock",
   "scripts": {
     "build": "rm -rf lib && tsc",
-    "lint": "concurrently -p command \"eslint .\" \"tsc -p test --noEmit\" \"tslint -p test\"",
-    "posttest": "yarn run lint",
+    "lint": "eslint . --ext .ts --config .eslintrc",
     "prepublishOnly": "yarn run build",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\""
+    "pretest": "tsc -p test --noEmit",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "posttest": "yarn lint"
   },
   "types": "lib/index.d.ts"
 }
