@@ -1,5 +1,6 @@
 import * as Nock from 'nock'
 
+export import NockScope = Nock.Scope
 export type Callback = (nock: NockScope) => any
 
 export default function nock(host?: string, options?: Callback | Nock.Options, cb?: Callback) {
@@ -18,7 +19,7 @@ export default function nock(host?: string, options?: Callback | Nock.Options, c
       await cb!(intercepter)
       ctx.nock++
     },
-    finally(ctx: {error?: Error, nock: number}) {
+    finally(ctx: {error?: Error; nock: number}) {
       if (!ctx.error) intercepter.done()
       ctx.nock--
       if (ctx.nock === 0) nock.cleanAll()
@@ -26,4 +27,3 @@ export default function nock(host?: string, options?: Callback | Nock.Options, c
   }
 }
 
-export interface NockScope extends Nock.Scope {}
