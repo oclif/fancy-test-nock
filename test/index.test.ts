@@ -1,7 +1,7 @@
 import {expect, fancy as base} from 'fancy-test'
 import HTTP from 'http-call'
 
-import nock from '../src'
+import nock, {NockScope} from '../src'
 
 const fancy = base
 .register('nock', nock)
@@ -9,7 +9,7 @@ const fancy = base
 describe('nock', () => {
   // from readme
   fancy
-  .nock('https://api.github.com', nock => {
+  .nock('https://api.github.com', (nock: NockScope) => {
     nock
     .get('/me')
     .reply(200, {name: 'jdxcode'})
