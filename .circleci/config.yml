@@ -5,24 +5,18 @@ jobs:
     docker:
       - image: node:latest
     working_directory: ~/cli
-    environment:
-      NYC: "yarn exec nyc -- --nycrc-path node_modules/@anycli/nyc-config/.nycrc"
-      MOCHA_FILE: "reports/mocha.xml"
     steps:
       - checkout
       - restore_cache: &restore_cache
           keys:
-            - v0-yarn-{{checksum ".circleci/config.yml"}}-{{ checksum "yarn.lock"}}
-            - v0-yarn-{{checksum ".circleci/config.yml"}}
-      - run: yarn add -D nyc@11 @anycli/nyc-config@0 mocha-junit-reporter@1 @commitlint/cli@6 @commitlint/config-conventional@6
-      - run: |
-          mkdir -p reports
-          $NYC yarn test --reporter mocha-junit-reporter
-          $NYC report --reporter text-lcov > coverage.lcov
-          curl -s https://codecov.io/bash | bash
-      - run: yarn exec commitlint -- -x @commitlint/config-conventional --from origin/master
-      - store_test_results: &store_test_results
-          path: ~/cli/reports
+            - v1-npm-{{checksum ".circleci/config.yml"}}-{{checksum "yarn.lock"}}
+            - v1-npm-{{checksum ".circleci/config.yml"}}
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Run tests
+          command: yarn test
   node-12:
     <<: *test
     docker:
@@ -37,13 +31,18 @@ jobs:
       - add_ssh_keys
       - checkout
       - restore_cache: *restore_cache
-      - run: yarn global add @anycli/semantic-release@1 semantic-release@12
-      - run: yarn --frozen-lockfile
-      - run: |
-          export PATH=/usr/local/share/.config/yarn/global/node_modules/.bin:$PATH
-          semantic-release -e @anycli/semantic-release
+      - run:
+          name: Install release dependencies
+          command: |
+            yarn global add @oclif/semantic-release@3 semantic-release@17
+            yarn --frozen-lockfile
+      - run:
+          name: Cut release
+          command: |
+            export PATH=/usr/local/share/.config/yarn/global/node_modules/.bin:$PATH
+            semantic-release -e @oclif/semantic-release
       - save_cache:
-          key: v0-yarn-{{checksum ".circleci/config.yml"}}-{{checksum "yarn.lock"}}
+          key: v1-yarn-{{checksum ".circleci/config.yml"}}-{{checksum "yarn.lock"}}
           paths:
             - ~/cli/node_modules
             - /usr/local/share/.cache/yarn
@@ -51,16 +50,16 @@ jobs:
 
 workflows:
   version: 2
-  "fancy-test":
+  "fancy-test-nock":
     jobs:
       - node-latest
       - node-12
       - node-10
-      # - release:
-      #     context: org-global
-      #     filters:
-      #       branches: {only: master}
-      #     requires:
-      #       - node-latest
-      #       - node-12
-      #       - node-10
+      - release:
+          context: org-global
+          filters:
+            branches: {only: master}
+          requires:
+            - node-latest
+            - node-12
+            - node-10
