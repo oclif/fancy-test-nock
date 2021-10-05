@@ -1,9 +1,9 @@
 {
-  "name": "@fancy-test/nock",
+  "name": "fancy-test-nock",
   "description": "extendable utilities for testing",
   "version": "0.1.1",
   "author": "Jeff Dickey @jdxcode",
-  "bugs": "https://github.com/jdxcode/fancy-test-nock/issues",
+  "bugs": "https://github.com/oclif/fancy-test-nock/issues",
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.1.2",
@@ -30,13 +30,13 @@
   "files": [
     "/lib"
   ],
-  "homepage": "https://github.com/jdxcode/fancy-test-nock",
+  "homepage": "https://github.com/oclif/fancy-test-nock",
   "keywords": [
     "dxcli"
   ],
   "license": "MIT",
   "main": "lib/index.js",
-  "repository": "jdxcode/fancy-test-nock",
+  "repository": "oclif/fancy-test-nock",
   "scripts": {
     "build": "rm -rf lib && tsc",
     "lint": "eslint . --ext .ts --config .eslintrc",
