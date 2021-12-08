@@ -2,7 +2,7 @@
   "name": "fancy-test-nock",
   "description": "extendable utilities for testing",
   "version": "1.0.0",
-  "author": "Jeff Dickey @jdxcode",
+  "author": "Salesforce",
   "bugs": "https://github.com/oclif/fancy-test-nock/issues",
   "dependencies": {},
   "devDependencies": {
