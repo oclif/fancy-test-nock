@@ -6,7 +6,7 @@
   "bugs": "https://github.com/oclif/fancy-test-nock/issues",
   "dependencies": {},
   "devDependencies": {
-    "@types/chai": "^4.3.4",
+    "@types/chai": "^4.3.5",
     "@types/mocha": "^8.0.0",
     "@types/nock": "^11.1.0",
     "@types/node": "^14.18.42",
