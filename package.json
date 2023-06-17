@@ -9,7 +9,7 @@
     "@types/chai": "^4.3.5",
     "@types/mocha": "^8.0.0",
     "@types/nock": "^11.1.0",
-    "@types/node": "^14.18.49",
+    "@types/node": "^14.18.51",
     "chai": "^4.3.7",
     "concurrently": "^6.5.1",
     "eslint": "^7.3.1",
