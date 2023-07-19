@@ -12,8 +12,9 @@ on:
         required: true
 jobs:
   npm:
-    uses: oclif/github-workflows/.github/workflows/npmPublish.yml@main
+    uses: salesforcecli/github-workflows/.github/workflows/npmPublish.yml@main
     with:
       tag: latest
       githubTag: ${{ github.event.release.tag_name || inputs.tag }}
-    secrets: inherit
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
