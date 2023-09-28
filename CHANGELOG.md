@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/oclif/fancy-test-nock/compare/1.0.1...1.0.2) (2023-09-28)
+
+
+### Bug Fixes
+
+* **deps:** bump get-func-name from 2.0.0 to 2.0.2 ([ffd427a](https://github.com/oclif/fancy-test-nock/commit/ffd427a7f64cde7c29e33050a2c0f035f30dda90))
+
+
+
 ## [1.0.1](https://github.com/oclif/fancy-test-nock/compare/v1.0.0...1.0.1) (2023-07-19)
 
 
