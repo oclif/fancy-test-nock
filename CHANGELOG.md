@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/oclif/fancy-test-nock/compare/1.0.2...1.1.0) (2024-02-12)
+
+
+### Features
+
+* bump dependencies ([3e066e9](https://github.com/oclif/fancy-test-nock/commit/3e066e9363decd37d90b940fc4058f1518dde4f3))
+
+
+
 ## [1.0.2](https://github.com/oclif/fancy-test-nock/compare/1.0.1...1.0.2) (2023-09-28)
 
 
