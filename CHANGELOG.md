@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/oclif/fancy-test-nock/compare/1.1.0...1.1.1) (2024-02-12)
+
+
+### Bug Fixes
+
+* **deps:** bump minimatch from 3.0.4 to 3.1.2 ([#273](https://github.com/oclif/fancy-test-nock/issues/273)) ([cb9dc76](https://github.com/oclif/fancy-test-nock/commit/cb9dc76a2ca74884f18833aac22bdf47db8bd941))
+
+
+
 # [1.1.0](https://github.com/oclif/fancy-test-nock/compare/1.0.2...1.1.0) (2024-02-12)
 
 
