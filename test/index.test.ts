@@ -1,4 +1,5 @@
-import {expect, fancy as base} from 'fancy-test'
+/* eslint-disable import/no-named-as-default */
+import {fancy as base, expect} from 'fancy-test'
 import HTTP from 'http-call'
 
 import nock, {NockScope} from '../src'
