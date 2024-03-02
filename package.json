@@ -17,7 +17,7 @@
     "fancy-test": "^3",
     "http-call": "^5.1.0",
     "mocha": "^10",
-    "nock": "^13.5.1",
+    "nock": "^13.5.4",
     "sinon": "^17",
     "ts-node": "^10",
     "typescript": "^5"
